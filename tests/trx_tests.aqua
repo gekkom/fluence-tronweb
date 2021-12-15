@@ -1,0 +1,222 @@
+import "./address.aqua"
+import "../src/aqua/Trx.aqua"
+
+func getCurrentBlock() -> string:
+    on PEER via RELAY:
+        res <- Trx.getCurrentBlock()
+    <- res
+
+func getConfirmedCurrentBlock() -> string:
+    on PEER via RELAY:
+        res <- Trx.getConfirmedCurrentBlock()
+    <- res
+
+func getBlock() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBlock("20684882")
+    <- res
+
+func getBlockByHash() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBlockByHash("00000000013ba052bb8f50c038c2349f37194cb7bffceaebbc5057798a8738a9")
+    <- res
+
+func getBlockByNumber() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBlockByNumber(20684882)
+    <- res
+
+func getBlockTransactionCount() -> u64:
+    on PEER via RELAY:
+        res <- Trx.getBlockTransactionCount("20684882")
+    <- res
+
+func getTransactionFromBlock() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransactionFromBlock(0, "00000000013ba052bb8f50c038c2349f37194cb7bffceaebbc5057798a8738a9")
+    <- res
+
+func getTransaction() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransaction("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res
+
+func getConfirmedTransaction() -> string:
+    on PEER via RELAY:
+        res <- Trx.getConfirmedTransaction("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res
+
+func getUnconfirmedTransactionInfo() -> string:
+    on PEER via RELAY:
+        res <- Trx.getUnconfirmedTransactionInfo("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res
+
+func getTransactionInfo() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransactionInfo("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res
+
+func getTransactionsToAddress() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransactionsToAddress("TR1RYyvQphNKEhEX25WW923PVF6XAR2FuM", 2, 0)
+    <- res
+
+func getTransactionsFromAddress() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransactionsFromAddress("TFysCB929XGezbnyumoFScyevjDggu3BPq", 2, 0)
+    <- res
+
+func getTransactionsRelated() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTransactionsRelated("TR1RYyvQphNKEhEX25WW923PVF6XAR2FuM", "all", 2, 0)
+    <- res
+
+func getAccount() -> string:
+    on PEER via RELAY:
+        res <- Trx.getAccount("TR1RYyvQphNKEhEX25WW923PVF6XAR2FuM")
+    <- res
+
+func getAccountById() -> string:
+    on PEER via RELAY:
+        res <- Trx.getAccountById("2")
+    <- res
+
+func getAccountInfoById() -> string:
+    on PEER via RELAY:
+        res <- Trx.getAccountInfoById("2", true)
+    <- res
+
+func getBalance() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBalance("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getUnconfirmedAccount() -> string:
+    on PEER via RELAY:
+        res <- Trx.getUnconfirmedAccount("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getUnconfirmedBalance() -> string:
+    on PEER via RELAY:
+        res <- Trx.getUnconfirmedBalance("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getBandwidth() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBandwidth("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getTokensIssuedByAddress() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTokensIssuedByAddress("TAK5XVZwMnJK2unkPtZ4A4VEZ6oyptU6tF")
+    <- res
+
+func getTokenFromID() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTokenFromID("TQKucgWL1cbAtW8vxKbwRgThw3FPmrok2t")
+    <- res
+
+func listNodes() -> string:
+    on PEER via RELAY:
+        res <- Trx.listNodes()
+    <- res
+
+func getBlockRange() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBlockRange(100, 110)
+    <- res
+
+func listSuperRepresentatives() -> string:
+    on PEER via RELAY:
+        res <- Trx.listSuperRepresentatives()
+    <- res
+
+func listTokens() -> string:
+    on PEER via RELAY:
+        res <- Trx.getCurrentBlock()
+    <- res
+
+func timeUntilNextVoteCycle() -> string:
+    on PEER via RELAY:
+        res <- Trx.timeUntilNextVoteCycle()
+    <- res
+
+func getContract() -> string:
+    on PEER via RELAY:
+        res <- Trx.getContract("TQKucgWL1cbAtW8vxKbwRgThw3FPmrok2t")
+    <- res
+
+func getApprovedList() -> string:
+    on PEER via RELAY:
+        res <- Trx.getApprovedList("1b10366e96cf0a38c3242e273553e6e671fd97f1e14c61cdc9388be81a2fbc82")
+    <- res
+
+func getProposal() -> string:
+    on PEER via RELAY:
+        res <- Trx.getProposal(0)
+    <- res
+
+func listProposals() -> string:
+    on PEER via RELAY:
+        res <- Trx.listProposals()
+    <- res
+
+func getChainParameters() -> string:
+    on PEER via RELAY:
+        res <- Trx.getChainParameters()
+    <- res
+
+func getAccountResources() -> string:
+    on PEER via RELAY:
+        res <- Trx.getAccountResources("TVpjLhiH6deJ3VqGfCR1jVAsH84fEzji67")
+    <- res
+
+func getExchangeByID() -> string:
+    on PEER via RELAY:
+        res <- Trx.getExchangeByID(0)
+    <- res
+
+func listExchanges() -> string:
+    on PEER via RELAY:
+        res <- Trx.listExchanges()
+    <- res
+
+func listExchangesPaginated() -> string:
+    on PEER via RELAY:
+        res <- Trx.listExchangesPaginated(nil, nil)
+    <- res
+
+func getNodeInfo() -> string:
+    on PEER via RELAY:
+        res <- Trx.getNodeInfo()
+    <- res
+
+func getTokenListByName() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTokenListByName("TQKucgWL1cbAtW8vxKbwRgThw3FPmrok2t")
+    <- res
+
+func getTokenByID() -> string:
+    on PEER via RELAY:
+        res <- Trx.getTokenByID("TQKucgWL1cbAtW8vxKbwRgThw3FPmrok2t")
+    <- res
+
+func getReward() -> string:
+    on PEER via RELAY:
+        res <- Trx.getReward("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getUnconfirmedReward() -> string:
+    on PEER via RELAY:
+        res <- Trx.getUnconfirmedReward("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getBrokerage() -> string:
+    on PEER via RELAY:
+        res <- Trx.getBrokerage("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res
+
+func getUnconfirmedBrokerage() -> string:
+    on PEER via RELAY:
+        res <- Trx.getUnconfirmedBrokerage("TFysCB929XGezbnyumoFScyevjDggu3BPq")
+    <- res

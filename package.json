@@ -1,0 +1,27 @@
+{
+  "name": "fluence-tronweb",
+  "version": "1.0.0",
+  "description": "Fluence wrapper for TronWeb",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "compile-aqua": "aqua --input src/aqua --output src/generated",
+    "watch-aqua": "chokidar \"**/*.aqua\" -c \"yarn run compile-aqua\"",
+    "start:tests:trx": "cd tests && aqua -i trx_tests.aqua -o trx_tests.air -a && cd .. && for i in tests/trx_tests.air/*.air; do fldist run_air -p $i -d '{\"node\":\"12D3KooWGWTNW9Y2ey8oDEu4rLQsU3R7hGgQS97nR5oPW5VQKyR3\"}' --generated; done",
+    "start:tests:tronweb": "cd tests && aqua -i tronweb_tests.aqua -o tronweb_tests.air -a && cd .. && for i in tests/tronweb_tests.air/*.air; do fldist run_air -p $i -d '{\"node\":\"12D3KooWGWTNW9Y2ey8oDEu4rLQsU3R7hGgQS97nR5oPW5VQKyR3\"}' --generated; done",
+    "start:tests:event": "cd tests && aqua -i event_tests.aqua -o event_tests.air -a && cd .. && for i in tests/event_tests.air/*.air; do fldist run_air -p $i -d '{\"node\":\"12D3KooWGWTNW9Y2ey8oDEu4rLQsU3R7hGgQS97nR5oPW5VQKyR3\"}' --generated; done"
+  },
+  "repository": "git+https://github.com/visdauas/fluence-tronweb.git",
+  "author": "visdauas",
+  "license": "MIT",
+  "devDependencies": {
+    "@fluencelabs/aqua": "^0.5.1-249",
+    "chokidar-cli": "^3.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@fluencelabs/fluence": "^0.15.4",
+    "@fluencelabs/fluence-network-environment": "^1.0.13",
+    "tronweb": "4.0.1"
+  }
+}

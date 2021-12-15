@@ -1,0 +1,70 @@
+import "./address.aqua"
+import "../src/aqua/TronWeb.aqua"
+
+func getFullnodeVersion():
+    on PEER via RELAY:
+        TronWeb.getFullnodeVersion()
+
+func setDefaultBlock():
+    on PEER via RELAY:
+       TronWeb.setDefaultBlock(100)
+
+func setPrivateKey():
+    on PEER via RELAY:
+        TronWeb.setPrivateKey("0451093a70770349242890cdbd8ad901755fdf123fdf10d20eae4c0814ccfeab")
+
+func setAddress():
+    on PEER via RELAY:
+        TronWeb.setAddress("TP8E6D6t8ED3pDve8g2dP15V3WxUjV6gdk")
+
+func fullnodeSatisfies() -> bool:
+    on PEER via RELAY:
+        res <- TronWeb.fullnodeSatisfies("1.0.0")
+    <- res
+
+func isValidProvider() -> bool:
+    on PEER via RELAY:
+        res <- TronWeb.isValidProvider("https://api.shasta.trongrid.io")
+    <- res
+
+func setFullNode():
+    on PEER via RELAY:
+        TronWeb.setFullNode("https://api.shasta.trongrid.io")
+
+func setSolidityNode():
+    on PEER via RELAY:
+        TronWeb.setSolidityNode("https://api.shasta.trongrid.io")
+
+func setEventServer():
+    on PEER via RELAY:
+        TronWeb.setEventServer("https://api.shasta.trongrid.io")
+
+func currentProviders() -> string:
+    on PEER via RELAY:
+        res <- TronWeb.currentProviders()
+    <- res
+
+func currentProvider() -> string:
+    on PEER via RELAY:
+        res <- TronWeb.currentProvider()
+    <- res
+
+func getEventByTransactionID() -> string:
+    on PEER via RELAY:
+        res <- TronWeb.getEventByTransactionID("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res
+
+func sha3() -> string:
+    on PEER via RELAY:
+        res <- TronWeb.sha3("asdasdsdasdadsas", false)
+    <- res
+
+func toHex() -> string:
+    on PEER via RELAY:
+        res <- TronWeb.toHex("asdasdasdasasdasasd")
+    <- res
+
+func isAddress() -> bool:
+    on PEER via RELAY:
+        res <- TronWeb.isAddress("garasdgasgasg")
+    <- res

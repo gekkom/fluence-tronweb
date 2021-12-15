@@ -1,0 +1,28 @@
+service TronWeb("TronWeb"):
+    getFullnodeVersion()
+    setDefaultBlock(blockID: u64)
+    setPrivateKey(privateKey: string)
+    setAddress(address: string)
+    fullnodeSatisfies(version: string) -> bool
+    isValidProvider(provider: string) -> bool
+    setFullNode(fullnode: string)
+    setSolidityNode(solidityNode: string)
+    setEventServer(eventServer: string)
+    setHeader(headers: []string)
+    setFullNodeHeader(headers: []string)
+    setEventHeader(headers: []string)
+    currentProviders() -> string
+    currentProvider() -> string
+    getEventByTransactionID(transactionID: string) -> string
+    sha3(input: string, prefix: bool) -> string
+    toHex(input: string) -> string
+    toUtf8(input: string) -> string
+    fromUtf8(input: string) -> string
+    toAscii(input: string) -> string
+    fromAscii(input: string, padding: string) -> string
+    toDecimal(input: string) -> u64
+    fromDecimal(input: u64) -> string
+    fromSun(input: string) -> string
+    toSun(input: string) -> string
+    toBigNumber(input: u64) -> u64
+    isAddress(address: string) -> bool

@@ -1,0 +1,4 @@
+service Event("Event"):
+    setServer(server: string) -> string
+    getEventsByContractAddress(contractAddress: string) -> string
+    getEventsByTransactionID(transactionID: string) -> string

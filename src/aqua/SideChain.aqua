@@ -1,0 +1,22 @@
+service SideChain("SideChain"):
+    setMainGatewayAddress(mainGatewayAddress: string)
+    setSideGatewayAddress(sideGatewayAddress: string)
+    setChainId(sideChainId: string)
+    depositTrx(callValue: u64, depositFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    depositTrc10(tokenId: string, tokenValue: u64, depositFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    depositTrc(functionSelector: string, num: u64, fee: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    approveTrc20(num: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    approveTrc721(id: string, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    depositTrc20(num: u64, depositFee: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    depositTrc721(id: string, depositFee: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    mappingTrc(trxHash: string, mappingFee: u64, feeLimit: u64, functionSelector: string, privateKey: ?string) -> string
+    mappingTrc20(trxHash: string, mappingFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    mappingTrc721(trxHash: string, mappingFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    withdrawTrx(callValue: u64, withdrawFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    withdrawTrc10(tokenId: string, tokenValue: u64, withdrawFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    withdrawTrc(functionSelector: string, num: u64, withdrawFee: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    withdrawTrc20(num: u64, withdrawFee: u64, feeLimit: u64, contractAddress: string, privateKey: ?string) -> string
+    injectFund(num: u64, feeLimit: u64, privateKey: ?string) -> string
+    retryWithdraw(nonce: u64, retryWithdrawFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    retryDeposit(nonce: u64, retryDepositFee: u64, feeLimit: u64, privateKey: ?string) -> string
+    retryMapping(nonce: u64, retryMappingFee: u64, feeLimit: u64, privateKey: ?string) -> string

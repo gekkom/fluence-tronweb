@@ -1,0 +1,2 @@
+const PEER ?= "12D3KooWLVG46KqnQfojVLizsdqisX3ciWxBiEp3a5tUGhwfw557"
+const RELAY ?= "12D3KooWSD5PToNiLQwKDXsu8JSysCwUt8BVUJEqCHcDe7P5h45e"

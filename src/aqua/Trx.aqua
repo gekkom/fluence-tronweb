@@ -1,0 +1,66 @@
+service Trx("Trx"):
+    getCurrentBlock() -> string
+    getConfirmedCurrentBlock() -> string
+    getBlock(block: string) -> string
+    getBlockByHash(blockHash: string) -> string
+    getBlockByNumber(blockID: u64) -> string
+    getBlockTransactionCount(block: string) -> u64
+    getTransactionFromBlock(index: u64, block: string) -> string
+    getTransaction(transactionID: string) -> string
+    getConfirmedTransaction(transactionID: string) -> string
+    getUnconfirmedTransactionInfo(transactionID: string) -> string
+    getTransactionInfo(transactionID: string) -> string
+    getTransactionsToAddress(address: string, limit: u64, offset: u64) -> string
+    getTransactionsFromAddress(address: string, limit: u64, offset: u64) -> string
+    getTransactionsRelated(address: string, direction: string, limit: u64, offset: u64) -> string
+    getAccount(address: string) -> string
+    getAccountById(id: string) -> string
+    getAccountInfoById(id: string, confirmed: bool) -> string
+    getBalance(address: string) -> string
+    getUnconfirmedAccount(address: string) -> string
+    getUnconfirmedAccountById(id: string) -> string
+    getUnconfirmedBalance(address: string) -> string
+    getBandwidth(address: string) -> string
+    getTokensIssuedByAddress(address: string) -> string
+    getTokenFromID(id: string) -> string
+    listNodes() -> string
+    getBlockRange(start: u64, end: u64) -> string
+    listSuperRepresentatives() -> string
+    listTokens(limit: ?u64, offset: ?u64) -> string
+    timeUntilNextVoteCycle() -> string
+    getContract(address: string) -> string
+    verifyMessage(message: string, signature: string, address: string, useTronHeader: ?bool) -> string
+    verifySignature(message: string, address: string, signature: string, useTronHeader: ?bool) -> string
+    sign(transaction: string, privateKey: string, useTronHeader: ?bool, multisig: ?bool) -> string
+    signString(message: string, privateKey: string, useTronHeader: ?bool) -> string
+    multiSign(transaction: string, privateKey: string, permissionId: ?string) -> string
+    getApprovedList(transaction: string) -> string
+    getSignWeight(transaction: string, permissionId: string) -> string
+    sendRawTransaction(signedTransaction: string) -> string
+    sendHexTransaction(signedHexTransaction: string) -> string
+    sendTransaction(to: string, amount: u64) -> string
+    sendToken(to: string, amount: u64, tokenID: string) -> string
+    freezeBalance(amount: u64, duration: u64, resource: string, receiverAddress: string) -> string
+    unfreezeBalance(resource: string, receiverAddress: string) -> string
+    updateAccount(accountName: string) -> string
+    signMessage(transaction: string, privateKey: string, useTronHeader: ?bool, multisig: ?bool) -> string
+    sendAsset(to: string, amount: u64, tokenID: string) -> string
+    send(to: string, amount: u64) -> string
+    sendTrx(to: string, amount: u64) -> string
+    broadcast(signedTransaction: string) -> string
+    broadcastHex(signedHexTransaction: string) -> string
+    signTransaction(transaction: string, privateKey: string, useTronHeader: ?bool, multisig: ?bool) -> string
+    getProposal(proposalID: u64) -> string
+    listProposals() -> string
+    getChainParameters() -> string
+    getAccountResources(address: string) -> string
+    getExchangeByID(id: u64) -> string
+    listExchanges() -> string
+    listExchangesPaginated(limit: ?u64, offset: ?u64) -> string
+    getNodeInfo() -> string
+    getTokenListByName(name: string) -> string
+    getTokenByID(id: string) -> string
+    getReward(address: string) -> string
+    getUnconfirmedReward(address: string) -> string
+    getBrokerage(address: string) -> string
+    getUnconfirmedBrokerage(address: string) -> string

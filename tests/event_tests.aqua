@@ -1,0 +1,17 @@
+import "./address.aqua"
+import "../src/aqua/Event.aqua"
+
+func setServer() -> string:
+    on PEER via RELAY:
+        res <- Event.setServer("https://api.shasta.trongrid.io")
+    <- res
+
+func getEventsByContractAddress() -> string:
+    on PEER via RELAY:
+        res <- Event.getEventsByContractAddress("TQKucgWL1cbAtW8vxKbwRgThw3FPmrok2t")
+    <- res
+
+func getEventsByTransactionID() -> string:
+    on PEER via RELAY:
+        res <- Event.getEventsByTransactionID("24acb88038f9840322138770be8f6aacdc9c2d6c942b3861956a3469632987bd")
+    <- res

@@ -1,0 +1,23 @@
+service TransactionBuilder("TransactionBuilder"):
+    sendTrx(to: string, amount: u64, fromAddr: ?string) -> string
+    sendToken(to: string, amount: u64, tokenID: string, fromAddr: ?string) -> string
+    purchaseToken(issuerAddresso: string, tokenID: string, amount: u64, buyer: ?string) -> string
+    freezeBalance(receiverAddress: string, amount: ?u64, duration: ?u64, resource: ?string, address: ?string) -> string
+    unfreezeBalance(receiverAddress: string, resource: ?string, address: ?string) -> string
+    withdrawBlockRewards(address: string) -> string
+    applyForSR(address: ?string, url: ?string) -> string
+    clearABI(address: string, ownerAddress: string) -> string
+    updateBrokerage(brokerage: u64, ownerAddress: string) -> string
+    updateAccount(accountName: string, address: ?string) -> string
+    setAccountId(accountName: string, accountId: string) -> string
+    sendAsset(to: string, amount: u64, tokenID: string, fromAddr: ?string) -> string
+    purchaseAsset(issuerAddresso: string, tokenID: string, amount: u64, buyer: ?string) -> string
+    deleteProposal(proposalID: u64, issuerAddress: string) -> string
+    voteProposal(proposalID: u64, isApproval: bool, voterAddress: string) -> string
+    createTRXExchange(tokenName: string, tokenBalance: u64, trxBalance: u64, ownerAddress: string) -> string
+    createTokenExchange(firstTokenName: string, firstTokenBalance: u64, secondTokenName: string, secondTokenBalance: u64, ownerAddress: string) -> string
+    injectExchangeTokens(exchangeID: u64, tokenName: string, tokenAmount: u64, ownerAddress: string) -> string
+    withdrawExchangeTokens(exchangeID: u64, tokenName: string, tokenAmount: u64, ownerAddress: string) -> string
+    tradeExchangeTokens(exchangeID: u64, tokenName: string, tokenAmountSold: u64, tokenAmountExpected: u64, ownerAddress: string) -> string
+    updateSetting(contractAddress: string, userFeePercentage: u64, ownerAddress: string) -> string
+    updateEnergyLimit(contractAddress: string, originEnergyLimit: u64, ownerAddress: string) -> string
